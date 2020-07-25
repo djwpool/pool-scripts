@@ -1,0 +1,7 @@
+CONFIG="/opt/cardano/block/config/config.json"
+TOPOLOGY="/opt/cardano/block/config/topology.json"
+DBPATH="/opt/cardano/block/db/"
+SOCKETPATH="/opt/cardano/block/db/node.socket"
+HOSTADDR="127.0.0.1"
+PORT="4501"
+LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"

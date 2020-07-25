@@ -1,0 +1,25 @@
+
+[Unit]
+Description=Cardano Relay
+After=multi-user.target
+
+[Service]
+Type=simple
+EnvironmentFile=/opt/cardano/relay/cardano-relay.environment
+ExecStart=/usr/local/bin/cardano-node run --config $CONFIG --topology $TOPOLOGY --database-path $DBPATH --socket-path $SOCKETPATH --host-addr $HOSTADDR --port $PORT
+User=crelay
+Group=crelay
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cardano-relay
+
+LimitNOFILE=32768
+
+Restart=on-failure
+RestartSec=15s
+WorkingDirectory=~
+User=crelay
+Group=crelay
+
+[Install]
+WantedBy=multi-user.target

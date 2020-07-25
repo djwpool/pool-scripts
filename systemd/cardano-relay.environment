@@ -1,0 +1,7 @@
+CONFIG="/opt/cardano/relay/config/config.json"
+TOPOLOGY="/opt/cardano/relay/config/topology.json"
+DBPATH="/opt/cardano/relay/db/"
+SOCKETPATH="/opt/cardano/relay/db/node.socket"
+HOSTADDR="0.0.0.0"
+PORT="3001"
+LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"

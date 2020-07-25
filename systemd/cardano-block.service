@@ -1,0 +1,25 @@
+
+[Unit]
+Description=Cardano Block Node
+After=multi-user.target
+
+[Service]
+Type=simple
+EnvironmentFile=/opt/cardano/block/cardano-block.environment
+ExecStart=/usr/local/bin/cardano-node run --config $CONFIG --topology $TOPOLOGY --database-path $DBPATH --socket-path $SOCKETPATH --host-addr $HOSTADDR --port $PORT
+User=cblock
+Group=cblock
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cardano-block
+
+LimitNOFILE=32768
+
+Restart=on-failure
+RestartSec=15s
+WorkingDirectory=~
+User=crelay
+Group=crelay
+
+[Install]
+WantedBy=multi-user.target
